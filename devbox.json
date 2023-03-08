@@ -1,0 +1,34 @@
+{
+  "packages": [
+    "SDL2",
+    "SDL2_mixer",
+    "SDL2_net",
+    "libpng",
+    "libsamplerate",
+    "automake",
+    "autoconf",
+    "pkg-config",
+    "libtool",
+    "git"
+  ],
+  "shell": {
+    "init_hook": null,
+    "scripts": {
+	    "clone-source": [
+		    "git clone https://github.com/chocolate-doom/chocolate-doom.git"
+	    ],
+	    "build": [
+		    "cd $PWD/chocolate-doom",
+		    "./autogen.sh",
+		    "make",
+		    "sudo make install"
+	    ],
+	    "doom": [
+		    "chocolate-doom -iwad doom1.wad"
+	    ]
+    }
+  },
+  "nixpkgs": {
+    "commit": "f80ac848e3d6f0c12c52758c0f25c10c97ca3b62"
+  }
+}
